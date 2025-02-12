@@ -1,5 +1,17 @@
-import java.io.*;
-public class CalculoSalario {
+/*
+Que es una equivalencia
+Particion valida e invalida
+    Valida: Valida esta listo para resolverse
+    Invalida: No esta preparada para recibir el valor, ej poner una edad negativa, la cual no deberia ser negativa, *se puede resolver con try catch*
+
+    Analizar el valor limite
+
+*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class App {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         double Salario=0;
@@ -19,6 +31,5 @@ public class CalculoSalario {
         }
         System.out.println("El salario final es: "+Salario);      
     }
-}
-
-//Salario > 1.5 K 15% ->  
+} 
+    
