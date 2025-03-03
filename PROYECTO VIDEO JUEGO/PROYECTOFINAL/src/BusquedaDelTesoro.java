@@ -12,27 +12,7 @@ public class BusquedaDelTesoro {
     private static Scanner scanner = new Scanner(System.in);
     private static final String RUTA_MAPA = "src/main/resources/mapa.jpg"; // Ajusta esta ruta según donde guardes la imagen
     
-    public static void main(String[] args) {
-        iniciarJuego();
-        
-        boolean juegoEnCurso = true;
-        while (juegoEnCurso) {
-            mostrarDescripcionUbicacion();
-            int opcion = pedirOpcion();
-            juegoEnCurso = procesarOpcion(opcion);
-            
-            // Pausa para que el jugador pueda leer los resultados antes de limpiar
-            if (juegoEnCurso) {
-                System.out.println("\nPresiona Enter para continuar...");
-                scanner.nextLine(); // Consumir la nueva línea después de nextInt()
-                scanner.nextLine(); // Esperar a que el usuario presione Enter
-                limpiarPantalla();
-            }
-        }
-        
-        scanner.close();
-        System.out.println("¡Gracias por jugar!");
-    }
+    
     
     private static void abrirMapa() {
         try {
@@ -41,13 +21,8 @@ public class BusquedaDelTesoro {
                 if (Desktop.isDesktopSupported()) {
                     Desktop.getDesktop().open(archivoMapa);
                     System.out.println("Abriendo el mapa de la isla...");
-                } else {
-                    System.out.println("No se puede abrir el mapa automáticamente en este sistema.");
-                    System.out.println("Por favor, abre manualmente el archivo en: " + RUTA_MAPA);
-                }
-            } else {
-                System.out.println("¡Error! No se encuentra el archivo del mapa en: " + RUTA_MAPA);
-            }
+                } 
+            } 
         } catch (IOException e) {
             System.out.println("Error al intentar abrir el mapa: " + e.getMessage());
         }
@@ -61,16 +36,8 @@ public class BusquedaDelTesoro {
             if (sistemaOperativo.contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
-            // Para Unix/Linux/MacOS
-            else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-                
-                // Alternativa si el código ANSI no funciona
-                Runtime.getRuntime().exec("clear");
-            }
+            
         } catch (IOException | InterruptedException ex) {
-            // Si los métodos anteriores fallan, intentamos con una solución alternativa
             for (int i = 0; i < 50; i++) {
                 System.out.println();
             }
@@ -159,8 +126,8 @@ public class BusquedaDelTesoro {
         System.out.println("9. Salir del juego");
         
         System.out.print("Elige una opción: ");
+
         
-        // Manejo de entrada inválida
         while (!scanner.hasNextInt()) {
             String entrada = scanner.nextLine().toUpperCase();
             if (entrada.equals("M")) {
@@ -173,16 +140,19 @@ public class BusquedaDelTesoro {
         }
         return scanner.nextInt();
     }
-    
+        // Manejo de entrada inválida
+        
     private static boolean procesarOpcion(int opcion) {
+        
+        //Opcion que termina el bucle
         if (opcion == 9) {
             System.out.println("¿Estás seguro que deseas salir del juego? (S/N)");
-            scanner.nextLine(); // Consumir la nueva línea
+            scanner.nextLine(); 
             String confirmacion = scanner.nextLine().toUpperCase();
             if (confirmacion.startsWith("S")) {
-                return false; // Terminar juego
+                return false; 
             } else {
-                return true; // Continuar juego
+                return true;                                                                                                                                                                                                                                                                                                                                                                                                                                  
             }
         }
         
@@ -333,5 +303,27 @@ public class BusquedaDelTesoro {
         } else {
             System.out.println("Tu inventario está lleno. No puedes llevar más objetos.");
         }
+    }
+
+    public static void main(String[] args) {
+        iniciarJuego();
+        
+        boolean juegoEnCurso = true;
+        while (juegoEnCurso) {
+            mostrarDescripcionUbicacion();
+            int opcion = pedirOpcion();
+            juegoEnCurso = procesarOpcion(opcion);
+            
+            // Pausa para que el jugador pueda leer los resultados antes de limpiar
+            if (juegoEnCurso) {
+                System.out.println("\nPresiona Enter para continuar...");
+                scanner.nextLine(); // Consumir la nueva línea después de nextInt()
+                scanner.nextLine(); // Esperar a que el usuario presione Enter
+                limpiarPantalla();
+            }
+        }
+        
+        scanner.close();
+        System.out.println("¡Gracias por jugar!");
     }
 }
