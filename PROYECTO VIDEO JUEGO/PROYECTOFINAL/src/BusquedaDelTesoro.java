@@ -29,19 +29,11 @@ public class BusquedaDelTesoro {
     }
     
     private static void limpiarPantalla() {
-        try {
-            String sistemaOperativo = System.getProperty("os.name");
-            
-            // Para Windows
-            if (sistemaOperativo.contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }
-            
-        } catch (IOException | InterruptedException ex) {
+        
             for (int i = 0; i < 50; i++) {
                 System.out.println();
             }
-        }
+
     }
     
     private static void iniciarJuego() {
