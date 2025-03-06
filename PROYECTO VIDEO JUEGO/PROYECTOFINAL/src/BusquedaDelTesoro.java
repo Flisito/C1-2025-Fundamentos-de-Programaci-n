@@ -24,7 +24,7 @@ public class BusquedaDelTesoro {
                 } 
             } 
         } catch (IOException e) {
-            System.out.println("Error al intentar abrir el mapa: " + e.getMessage());
+            System.out.println("Error al intentar abrir el mapa: ");
         }
     }
     
@@ -131,9 +131,8 @@ public class BusquedaDelTesoro {
             }
         }
         return scanner.nextInt();
-    }
-        // Manejo de entrada inválida
-        
+    } 
+    
     private static boolean procesarOpcion(int opcion) {
         
         //Opcion que termina el bucle
@@ -305,8 +304,7 @@ public class BusquedaDelTesoro {
             mostrarDescripcionUbicacion();
             int opcion = pedirOpcion();
             juegoEnCurso = procesarOpcion(opcion);
-            
-            // Pausa para que el jugador pueda leer los resultados antes de limpiar
+
             if (juegoEnCurso) {
                 System.out.println("\nPresiona Enter para continuar...");
                 scanner.nextLine(); // Consumir la nueva línea después de nextInt()
@@ -316,6 +314,6 @@ public class BusquedaDelTesoro {
         }
         
         scanner.close();
-        System.out.println("¡Gracias por jugar!");
+        System.out.println("Proyecto video juego, fundamentos de programacion");
     }
 }
