@@ -1,11 +1,11 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.IOException;
 import java.io.File;
 import java.awt.Desktop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BusquedaDelTesoro {
+public class BusquedaDelTesoro2 {
     
     // Variables globales
     private static String ubicacionActual;
