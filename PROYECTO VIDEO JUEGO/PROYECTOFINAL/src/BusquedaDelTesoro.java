@@ -11,7 +11,7 @@ public class BusquedaDelTesoro {
     private static int itemsEnInventario = 0;
     private static Scanner scanner = new Scanner(System.in);
     private static final String RUTA_MAPA = "C:\\src\\resources\\mapa.jpg"; // Ajustar esta ruta según donde se guarde la imagen
-    
+
     // Variables globales adicionales para combate
     private static int vidaJugador = 100;
     private static boolean tesoroEncontrado = false;
@@ -573,9 +573,15 @@ public class BusquedaDelTesoro {
         System.out.println("\n=== VICTORIA ===");
         System.out.println("Abres el cofre del tesoro y encuentras oro, joyas y reliquias de incalculable valor.");
         System.out.println("También encuentras el diario completo de tu abuelo, el Capitán Arvid, donde explica");
-        System.out.println("cómo reunió este tesoro durante sus aventuras por los siete mares.");
-        System.out.println("\nCon el mapa y el tesoro en tu poder, regresas victorioso a tu barco.");
-        System.out.println("Has completado el legado de tu abuelo y ahora tú también eres una leyenda.");
+        System.out.println("cómo llego este tesoro a la isla durante sus aventuras por los siete mares.\n\n"+
+                        "En una remota isla del Caribe, el joven capitán pirata Arvid encontró un tesoro indescriptible.\n"+
+                        "Sin embargo, su propia tripulación, presa de la codicia, planeaba un boicot. Decidido a proteger su hallazgo, Arvid averió las velas del barco, encallando a la tripulación en la isla. Mientras ellos reparaban la embarcación, él se dedicó a vaciar el cofre original y esconder el tesoro. Ademas dejo en la playas un cofre hechizo que fabricó con restos del barco. Para ocultar su astuta jugada, llenó el cofre original con arena y guardó la llave en su pecho.\r\n" + 
+                        "Cuando la nave estuvo lista para zarpar, el boicot estalló. En medio del caos, Arvid, luchando por su vida, lanzó la llave al mar, 'sellando' su fortuna para siempre. La furiosa tripulación ató al capitán al asta principal, preparándose para sacrificarlo. Su única petición fue que entregaran su viejo diario a su querido nieto, Finn, un niño que había escuchado historias sobre el legado de su abuelo.\r\n" + 
+                        "Los piratas, sintiéndose victoriosos, regresaron a tierra con el cofre de acero. Sin embargo, abrirlo tomó meses; finalmente, tras mucho esfuerzo, lograron abrir el cofre. Pero el verdadero tesoro estaba en el diario de Arvid, un libro plagado de anagramas y pistas crípticas.\r\n" + 
+                        "Años después, Finn se convirtió en un joven astuto y perspicaz. Dedicó horas a descifrar los anagramas de su abuelo, mezclando su ingenio con la inteligencia adquirida de las viejas leyendas. Con paciencia y determinación, logró descomponer las palabras y convertirlas en coordenadas precisas de la isla donde su abuelo había escondido el tesoro.\r\n" + 
+                        "Con el mapa en mano, Finn partió de aventura hacia la isla que había sido parte de su historia familiar.");
+        System.out.println("\n\n...Con el mapa y el tesoro en tu poder, regresas victorioso a tu barco.");
+        System.out.println("\nHas completado el legado de tu abuelo y ahora tú también eres una leyenda.");
         System.out.println("\n=== FIN DEL JUEGO ===\n\n");
         
         System.out.println("\n¿Qué deseas hacer con el tesoro? (1. Llevarlo a un museo / 2. Quedártelo)");
@@ -661,7 +667,11 @@ public class BusquedaDelTesoro {
         }
     }
 
-
+    private static void mostrarEstadoJugador() {
+        System.out.println("\n--- ESTADO ---");
+        mostrarBarraVida(vidaJugador, 100, "Vida");
+    }
+    
 public static void main(String[] args) {
     iniciarJuego();
     
@@ -687,13 +697,7 @@ public static void main(String[] args) {
         }
     }
     
-    scanner.close();
-    System.out.println("¡Gracias por jugar!");
-}
-
-private static void mostrarEstadoJugador() {
-    System.out.println("\n--- ESTADO ---");
-    mostrarBarraVida(vidaJugador, 100, "Vida");
-}
-
+        scanner.close();
+        System.out.println("¡Gracias por jugar!");
+    }
 }
