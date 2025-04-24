@@ -70,7 +70,7 @@ public class BusquedaDelTesoro {
         limpiarPantalla();
         System.out.println("\n\n");
         System.out.println("=== EL TESORO DEL CAPITÁN ARVID ===\n");
-        System.out.println("Eres Finn, nieto de un legendario capitán pirata. Has encontrado un viejo diario");
+        System.out.println("Eres Finn, nieto de un legendario capitán pirata. Unos hombres te ha dado un viejo diario");
         System.out.println("con pistas crípticas que te han llevado a esta misteriosa isla del Caribe.");
         System.out.println("Tu misión es encontrar el tesoro escondido de tu abuelo.");
         System.out.println("----------------------------------------");
