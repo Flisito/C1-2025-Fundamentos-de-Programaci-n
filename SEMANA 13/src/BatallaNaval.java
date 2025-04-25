@@ -2,7 +2,31 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class BatallaNaval {
+      // Función para colocar los barcos en el tablero
+      public static void colocarBarcos(int[] tablero) {
+        Random aleatorio = new Random();
+        
+        for (int i = 1; i <= 5; i++) {
+            boolean barcoColocado = false;
+            
+            while (!barcoColocado) {
+                int posicion = aleatorio.nextInt(20);
+                
+                if (tablero[posicion] == 0) {
+                    tablero[posicion] = i;
+                    barcoColocado = true;
+                }
+            }
+        }
+    }
     
+    // Función para mostrar el tablero
+    public static void mostrarTablero(int[] tablero) {
+        for (int i = 0; i < 20; i++) {
+            System.out.print(tablero[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         // Declarar los arreglos para los barcos
         int[] barcosJugador = new int[20];
@@ -113,29 +137,5 @@ public class BatallaNaval {
         entrada.close();
     }
     
-    // Función para colocar los barcos en el tablero
-    public static void colocarBarcos(int[] tablero) {
-        Random aleatorio = new Random();
-        
-        for (int i = 1; i <= 5; i++) {
-            boolean barcoColocado = false;
-            
-            while (!barcoColocado) {
-                int posicion = aleatorio.nextInt(20);
-                
-                if (tablero[posicion] == 0) {
-                    tablero[posicion] = i;
-                    barcoColocado = true;
-                }
-            }
-        }
-    }
-    
-    // Función para mostrar el tablero
-    public static void mostrarTablero(int[] tablero) {
-        for (int i = 0; i < 20; i++) {
-            System.out.print(tablero[i] + " ");
-        }
-        System.out.println();
-    }
+  
 }
