@@ -29,8 +29,8 @@ public class BatallaNaval {
         colocarBarcos(barcosComputadora);
         
         // Mostrar mensaje de bienvenida
-        System.out.println("¡Bienvenido a Batalla Naval!");
-        System.out.println("Tienes 3 minutos para hundir los 5 barcos de la computadora");
+        System.out.println("--- Batalla Naval ---");
+        System.out.println("Tiempo para ganar - 3 minutos");
         
         // Mostrar el tablero del jugador
         System.out.println("\nTu tablero:");
@@ -45,7 +45,7 @@ public class BatallaNaval {
             long tiempoTranscurrido = tiempoActual - tiempoInicio;
             
             if (tiempoTranscurrido >= tiempoLimite) {
-                System.out.println("\n¡Se acabó el tiempo! Perdiste.");
+                System.out.println("\n - Se acabó el tiempo - Perdiste.");
                 juegoTerminado = true;
                 break;
             }
@@ -70,12 +70,12 @@ public class BatallaNaval {
                 barcosHundidosComputadora++;
                 barcosComputadora[posicionDisparo] = 0;
             } else {
-                System.out.println("Agua... no le diste a ningún barco.");
+                System.out.println("No le diste a ningún barco.");
             }
             
             // Verificar si el jugador ganó
             if (barcosHundidosComputadora == 5) {
-                System.out.println("\n¡Felicidades! Hundiste todos los barcos de la computadora.");
+                System.out.println("\nHundiste todos los barcos de la computadora.");
                 juegoTerminado = true;
                 break;
             }
@@ -86,7 +86,7 @@ public class BatallaNaval {
             
             // Verificar si le dio a un barco del jugador
             if (barcosJugador[disparoComputadora] > 0) {
-                System.out.println("¡La computadora hundió tu barco " + barcosJugador[disparoComputadora] + "!");
+                System.out.println("computadora hundió tu barco " + barcosJugador[disparoComputadora] );
                 barcosHundidosJugador++;
                 barcosJugador[disparoComputadora] = 0;
             } else {
@@ -95,7 +95,7 @@ public class BatallaNaval {
             
             // Verificar si la computadora ganó
             if (barcosHundidosJugador == 5) {
-                System.out.println("\nLa computadora hundió todos tus barcos. ¡Perdiste!");
+                System.out.println("\nLa computadora hundió todos tus barcos. Perdiste");
                 juegoTerminado = true;
                 break;
             }
